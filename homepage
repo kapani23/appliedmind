@@ -1,0 +1,24 @@
+From BP to Everyone:  05:39 PM
+https://vladmihalcea.com/how-to-inherit-properties-from-a-base-class-entity-using-mappedsuperclass-with-jpa-and-hibernate/
+From Me to Everyone:  06:01 PM
+https://github.com/Baeldung/spring-security-registration/tree/master/src/main/java/com/baeldung
+From SP to Everyone:  06:23 PM
+Node Education 
+	Node Create
+		Leaf Fine Arts
+
+
+Node Yoga
+	Node Categoy
+		Leaf Bikram
+		Leaf Yin 
+		Leaf Vinyasa
+		Leaf Hatha 
+
+Flatten Node
+Education ,Create, Finearts 
+Education ,Create, Graphic Design
+
+1. Tree structure
+2. API to access
+3. CSV reader and then create the JTree

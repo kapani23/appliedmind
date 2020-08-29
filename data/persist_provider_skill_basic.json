@@ -1,0 +1,53 @@
+{
+  "services": [
+    {
+      "categoryId": "1",
+      "servicesId": "2",
+      "serviceEngagementFeeTerms": [
+        {
+          "engagementType": "1",
+          "engagementCost": "1000"
+        },
+        {
+          "engagementType": "2",
+          "engagementCost": "600"
+        }
+      ],
+      "experienceSummary": {
+        "certifications": "",
+         "qualification": "",
+        "whyThisSkill": "Feel confident I have working and teaching for 20 years",
+        "yearOfExperience": "20",
+        "noOfStudentsTaught": "",
+        "mediaType":""
+      }
+    },
+    {
+      "categoryId": "3",
+      "servicesId": "23",
+      "serviceEngagementFeeTerms": [
+        {
+          "engagementType": "2",
+          "engagementCost": "6000"
+        }
+      ],
+      "experienceSummary": {
+        "certifications": "",
+        "qualification": "",
+        "whyThisSkill": "Feel confident I have working and teaching for 20 years",
+        "yearOfExperience": "20",
+        "noOfStudentsTaught": ""
+      }
+    }
+  ],
+  "self-bio": {
+    "funFactsAboutYourself": "I am going super slow now",
+    "formalEducation":""
+  },
+  "payments": [
+    1,
+    2,
+    3,
+    4
+  ]
+}

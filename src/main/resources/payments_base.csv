@@ -1,0 +1,5 @@
+id,payment_type
+1,PayTm
+2,Google Pay
+3,MasterCard
+4,Visa

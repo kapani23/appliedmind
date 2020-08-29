@@ -1,0 +1,27 @@
+User tries to login
+
+a) He is not registered
+	Should we record his data?
+	If not - then do we redirect him to registration with a welcome message.
+	Welcome message will say something Welcome <email or phonenumber> to <>. Please register to access excitng services
+	CODE should 421
+	HTTP status code = 
+	
+b) He is registered but not verified
+	We already have his firstname,lastname,phone or and email. We will greet him on the TOKEN page saying to verify account
+	CODE should be 422
+c) Sunny side - we show him the
+	CODE should be 
+	
+	
+==========================================================================================	
+Categories
+Health & Wellness
+Teaching
+Arts & Craft
+Music
+Cooking
+==========================================================================================
+
+
+	
