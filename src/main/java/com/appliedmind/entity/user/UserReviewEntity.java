@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "USER_REVIEW")
-public class ProviderReviewEntity {
+public class UserReviewEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

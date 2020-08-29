@@ -16,16 +16,16 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "USER_SERVICES_CATEGORY_SKILLS")
-public class ProviderSkillsEntity {
+public class UserSkillsEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "SKILL_ID")
 	private Long userSkillId;
 
-	@ManyToOne(targetEntity = ProviderServicesEntity.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@ManyToOne(targetEntity = UserServicesEntity.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "USER_SERVICES_ID", referencedColumnName = "USER_SERVICES_ID")
-	private ProviderServicesEntity userServicesEntity;
+	private UserServicesEntity userServicesEntity;
 
 	// Java, Piano, GCP, French, Maths, Hindi
 	@Column(name = "SKILL_NAME")
@@ -101,11 +101,11 @@ public class ProviderSkillsEntity {
 		this.skillCertification = skillCertification;
 	}
 
-	public ProviderServicesEntity getUserServicesEntity() {
+	public UserServicesEntity getUserServicesEntity() {
 		return userServicesEntity;
 	}
 
-	public void setUserServicesEntity(ProviderServicesEntity userServicesEntity) {
+	public void setUserServicesEntity(UserServicesEntity userServicesEntity) {
 		this.userServicesEntity = userServicesEntity;
 	}
 

@@ -18,7 +18,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "USER_SERVICES")
-public class ProviderServicesEntity {
+public class UserServicesEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,7 +30,7 @@ public class ProviderServicesEntity {
 	private UserProfileEntity userProfileEntity;
 
 	@OneToMany(mappedBy = "userServicesEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<ProviderSkillsEntity> userSkillsEntity;
+	private List<UserSkillsEntity> userSkillsEntity;
 
 	// Teacher, Musician
 	@OneToOne(mappedBy = "userServicesEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -80,11 +80,11 @@ public class ProviderServicesEntity {
 		this.userProfileEntity = userProfileEntity;
 	}
 
-	public List<ProviderSkillsEntity> getUserSkillsEntity() {
+	public List<UserSkillsEntity> getUserSkillsEntity() {
 		return userSkillsEntity;
 	}
 
-	public void setUserSkillsEntity(List<ProviderSkillsEntity> userSkillsEntity) {
+	public void setUserSkillsEntity(List<UserSkillsEntity> userSkillsEntity) {
 		this.userSkillsEntity = userSkillsEntity;
 	}
 

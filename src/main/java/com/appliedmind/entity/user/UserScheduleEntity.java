@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "USER_SCHEDULE")
-public class ProviderScheduleEntity {
+public class UserScheduleEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
