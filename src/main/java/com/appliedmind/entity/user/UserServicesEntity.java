@@ -34,7 +34,6 @@ public class UserServicesEntity {
 
 	// Teacher, Musician
 	@OneToOne(mappedBy = "userServicesEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@Column(name = "SERVICE_CATEGORY_ID")
 	private ServiceCategoryEntity serviceCategoryEntity;
 
 	// Software Developer, Lead Engineer etc

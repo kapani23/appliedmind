@@ -18,8 +18,8 @@ public class UserScheduleEntity {
 	@Column(name = "USER_SCHEDULE_ID")
 	private Long userScheduleId;
 
-	@Column(name = "END_TIME")
-	private String is;
+	@Column(name = "IS_AVAILABLE")
+	private String isAvailable;
 	
 	@Column(name = "START_TIME")
 	private String startTime;
