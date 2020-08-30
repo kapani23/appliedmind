@@ -15,8 +15,8 @@ public class AppointmentEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "USER_SCHEDULE_ID")
-	private Long userScheduleId;
+	@Column(name = "APPOINTMENT_ID")
+	private Long appointmentId;
 
 	@Column(name = "REVIEW")
 	private String startTime;

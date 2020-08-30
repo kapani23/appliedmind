@@ -42,7 +42,7 @@ public class EmailNotificationService implements NotificationService {
 
 				public void prepare(MimeMessage mimeMessage) throws Exception {
 					mimeMessage.setRecipient(Message.RecipientType.TO, new InternetAddress(phoneOrEmail));
-					mimeMessage.setFrom(new InternetAddress("gharpe.services20@gmail.com", "AppliedMind"));
+					mimeMessage.setFrom(new InternetAddress("appliedmind.marketplace@gmail.com", "AppliedMind"));
 					mimeMessage.setSubject("AppliedMind OTP");
 					String[] params = new String[] { verificationCode };
 					String mediaMessage = messageSource.getMessage("otp.message", params,
