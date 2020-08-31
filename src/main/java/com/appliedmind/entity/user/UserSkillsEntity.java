@@ -44,6 +44,11 @@ public class UserSkillsEntity {
 	// User will upload the cert so that we can show to consumer
 	private String skillCertification;
 
+	@Lob
+	@Column(name = "AWARDS_RECOGNITION")
+	// User will upload the awards/recognition so that we can show to consumer
+	private String awardsRecognition;
+
 	@Column(name = "INSTITUTE_NAME")
 	private String instituteName;
 

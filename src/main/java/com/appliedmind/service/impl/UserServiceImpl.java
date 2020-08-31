@@ -87,12 +87,14 @@ public class UserServiceImpl implements UserService {
 		String email = verificationRequest.getEmail();
 		String phone = verificationRequest.getPhone();
 
-		// First search by Phone
-		UserProfileEntity profileEntity = userRepository.findByPhone(phone);
-
-		// If null then search by email
-		if (profileEntity == null) {
+		UserProfileEntity profileEntity = null;
+		
+		if (StringUtils.isNotBlank(phone)) {
+			profileEntity = userRepository.findByPhone(phone);
+		} else if (StringUtils.isNotBlank(email)) {
 			profileEntity = userRepository.findByEmail(email);
+		} else {
+			throw new RuntimeException("Cannot happen. We always want to have a search query of phone or email");
 		}
 
 		if (profileEntity == null) {

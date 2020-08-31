@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -32,7 +33,7 @@ public class UserServicesEntity {
 	@OneToMany(mappedBy = "userServicesEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<UserSkillsEntity> userSkillsEntity;
 
-	// Teacher, Musician
+	// Teaching, Wellness & Health, Music, Cooking
 	@OneToOne(mappedBy = "userServicesEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private ServiceCategoryEntity serviceCategoryEntity;
 
@@ -40,6 +41,30 @@ public class UserServicesEntity {
 	// Teacher in top school in Pune etc
 	@Column(name = "ABOUT_YOUR_SELF")
 	private String aboutYourSelf;
+	
+	// French Teacher, English Teacher, Chef, Musician
+	@Column(name = "SERVICE_NAME")
+	private String serviceName;
+	
+	@Column(name = "QUALIFICATION")
+	private String qualification;
+	
+	@Column(name = "INSTITUTE_NAME")
+	private String instituteName;
+	
+	@Column(name = "EXPERIENCE")
+	private String experience;
+	
+	@Lob
+	@Column(name = "CERTIFICATION")
+	// User will upload the cert so that we can show to consumer
+	private String certification;
+	
+	@Lob
+	@Column(name = "AWARDS_RECOGNITION")
+	// User will upload the awards/recognition so that we can show to consumer
+	private String awardsRecognition;
+
 
 	@Column(name = "CREATED_TIME", nullable = false)
 	private LocalDateTime createdTime;
