@@ -6,6 +6,7 @@ import com.appliedmind.dto.user.ProfileCreationRequest;
 import com.appliedmind.dto.user.ProfileCreationResponse;
 import com.appliedmind.dto.user.ProfileVerificationRequest;
 import com.appliedmind.dto.user.ProfileVerificationResponse;
+import com.appliedmind.dto.user.ProviderRegistrationRequest;
 
 public interface UserService {
 
@@ -15,13 +16,9 @@ public interface UserService {
 
 	public LoginResponse verifyUserLogin(LoginRequest loginRequest);
 
-	public boolean isUserRegisteredByEmail(String email);
-
-	public boolean isUserRegisteredByPhone(String phone);
-
 	public boolean updateUserAddress();
 
-	public boolean updateUserProfession();
+	public boolean updateUserServices(ProviderRegistrationRequest providerRegRequest);
 
 	public boolean updateUserSkills();
 }

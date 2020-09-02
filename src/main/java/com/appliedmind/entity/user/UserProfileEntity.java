@@ -32,7 +32,7 @@ public class UserProfileEntity {
 	private UserOnboardingEntity userOnboardingEntity;
 
 	@OneToMany(mappedBy = "userProfileEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<UserServicesEntity> userServicesCategoryEntity;
+	private List<UserServicesEntity> userServicesEntity;
 
 	@OneToOne(mappedBy = "userProfileEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private UserDeviceMetadataEntity userDeviceMetadataEntity;
@@ -131,12 +131,12 @@ public class UserProfileEntity {
 		this.userOnboardingEntity = userOnboardingEntity;
 	}
 
-	public List<UserServicesEntity> getUserServicesCategoryEntity() {
-		return userServicesCategoryEntity;
+	public List<UserServicesEntity> getUserServicesEntity() {
+		return userServicesEntity;
 	}
 
-	public void setUserServicesCategoryEntity(List<UserServicesEntity> userServicesCategoryEntity) {
-		this.userServicesCategoryEntity = userServicesCategoryEntity;
+	public void setUserServicesEntity(List<UserServicesEntity> userServicesCategoryEntity) {
+		this.userServicesEntity = userServicesCategoryEntity;
 	}
 
 	public UserDeviceMetadataEntity getUserDeviceMetadataEntity() {

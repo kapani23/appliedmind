@@ -1,6 +1,8 @@
 package com.appliedmind.service.impl;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +19,15 @@ import com.appliedmind.dto.user.ProfileCreationRequest;
 import com.appliedmind.dto.user.ProfileCreationResponse;
 import com.appliedmind.dto.user.ProfileVerificationRequest;
 import com.appliedmind.dto.user.ProfileVerificationResponse;
+import com.appliedmind.dto.user.ProviderRegistrationRequest;
+import com.appliedmind.dto.user.ServiceRequest;
+import com.appliedmind.dto.user.SkillRequest;
 import com.appliedmind.dto.user.UserBuilder;
 import com.appliedmind.dto.user.ValidationResponse;
 import com.appliedmind.entity.user.UserOnboardingEntity;
 import com.appliedmind.entity.user.UserProfileEntity;
+import com.appliedmind.entity.user.UserServicesEntity;
+import com.appliedmind.entity.user.UserSkillsEntity;
 import com.appliedmind.repository.UserRepository;
 import com.appliedmind.service.TokenService;
 import com.appliedmind.service.UserService;
@@ -88,7 +95,7 @@ public class UserServiceImpl implements UserService {
 		String phone = verificationRequest.getPhone();
 
 		UserProfileEntity profileEntity = null;
-		
+
 		if (StringUtils.isNotBlank(phone)) {
 			profileEntity = userRepository.findByPhone(phone);
 		} else if (StringUtils.isNotBlank(email)) {
@@ -192,24 +199,69 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public boolean isUserRegisteredByEmail(String email) {
-		return this.userRepository.findByEmail(email) != null ? true : false;
-	}
-
-	@Override
-	public boolean isUserRegisteredByPhone(String phone) {
-		return this.userRepository.findByPhone(phone) != null ? true : false;
-	}
-
-	@Override
 	public boolean updateUserAddress() {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean updateUserProfession() {
-		// TODO Auto-generated method stub
+	public boolean updateUserServices(ProviderRegistrationRequest providerRegRequest) {
+
+		String phone = null;
+		String email = null;
+
+		UserProfileEntity profileEntity = null;
+
+		if (StringUtils.isNotBlank(phone)) {
+			profileEntity = userRepository.findByPhone(phone);
+		} else if (StringUtils.isNotBlank(email)) {
+			profileEntity = userRepository.findByEmail(email);
+		} else {
+			throw new RuntimeException("Cannot happen. We always want to have a search query of phone or email");
+		}
+
+		List<UserServicesEntity> userServices = profileEntity.getUserServicesEntity();
+
+		if (userServices == null) {
+			userServices = new ArrayList<>();
+		}
+
+		List<ServiceRequest> services = providerRegRequest.getServices();
+
+		for (ServiceRequest serviceRequest : services) {
+
+			// Service which is equal to Category i.e. Teaching / Cooking / Wellness &
+			UserServicesEntity servicesEntity = new UserServicesEntity();
+			servicesEntity.setAboutYourSelf("");
+			servicesEntity.setAwardsRecognition("");
+			servicesEntity.setCertification(serviceRequest.getServiceExperienceSummary().getCertifications().get(0));
+			servicesEntity.setExperience("");
+			servicesEntity.setInstituteName("");
+			servicesEntity.setQualification(serviceRequest.getServiceExperienceSummary().getQualification());
+			servicesEntity.setServiceName("");
+			servicesEntity.setUserProfileEntity(profileEntity);
+
+			List<SkillRequest> skills = serviceRequest.getSkills();
+
+			for (SkillRequest skill : skills) {
+
+				List<UserSkillsEntity> userSkillsEntityList = new ArrayList<>();
+
+				// Skills i.e. Math Grade 6, Math Grade 7
+				UserSkillsEntity userSkillEntity = new UserSkillsEntity();
+				userSkillEntity.setInstituteName("");
+				userSkillEntity.setQualification("");
+				userSkillEntity.setSkillCertification("");
+				userSkillEntity.setSkillExp("");
+				userSkillEntity.setSkillName("");
+				userSkillEntity.setUserServicesEntity(servicesEntity);
+				
+			}
+
+		}
+
+		
+
 		return false;
 	}
 

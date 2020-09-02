@@ -1,0 +1,124 @@
+{
+	"services": [
+		{
+			"serviceId": "2",
+			"serviceExperienceSummary": {
+				"certifications": [],
+				"qualification": "",
+				"whyThisSkill": "Feel confident I have working and teaching for 20 years",
+				"yearOfExperience": "20",
+				"noOfStudentsTaught": "",
+				"mediaType": ""
+			},
+			"skills": [
+				{
+					"skillId": "12",
+					"skillEngagementFeeTerms": [
+						{
+							"engagementType": "1",
+							"engagementCost": "1000"
+						},
+						{
+							"engagementType": "2",
+							"engagementCost": "600"
+						}
+					],
+					"skillExperienceSummary": {
+						"certifications": [],
+						"qualification": "",
+						"whyThisSkill": "Feel confident I have working and teaching for 20 years",
+						"yearOfExperience": "20",
+						"noOfStudentsTaught": "",
+						"mediaType": ""
+					}
+				},
+				{
+					"skillId": "13",
+					"skillEngagementFeeTerms": [
+						{
+							"engagementType": "1",
+							"engagementCost": "1000"
+						},
+						{
+							"engagementType": "2",
+							"engagementCost": "600"
+						}
+					],
+					"skillExperienceSummary": {
+						"certifications": [],
+						"qualification": "",
+						"whyThisSkill": "Feel confident I have working and teaching for 20 years",
+						"yearOfExperience": "20",
+						"noOfStudentsTaught": "",
+						"mediaType": ""
+					}
+				}
+			]
+		},
+		{
+			"serviceId": "3",
+			"serviceExperienceSummary": {
+				"certifications": [],
+				"qualification": "",
+				"whyThisSkill": "Feel confident I have working and teaching for 20 years",
+				"yearOfExperience": "20",
+				"noOfStudentsTaught": "",
+				"mediaType": ""
+			},
+			"skills": [
+				{
+					"skillId": "2",
+					"skillEngagementFeeTerms": [
+						{
+							"engagementType": "1",
+							"engagementCost": "1000"
+						},
+						{
+							"engagementType": "2",
+							"engagementCost": "600"
+						}
+					],
+					"skillExperienceSummary": {
+						"certifications": [],
+						"qualification": "",
+						"whyThisSkill": "Feel confident I have working and teaching for 20 years",
+						"yearOfExperience": "20",
+						"noOfStudentsTaught": "",
+						"mediaType": ""
+					}
+				},
+				{
+					"skillId": "3",
+					"skillEngagementFeeTerms": [
+						{
+							"engagementType": "1",
+							"engagementCost": "1000"
+						},
+						{
+							"engagementType": "2",
+							"engagementCost": "600"
+						}
+					],
+					"skillExperienceSummary": {
+						"certifications": [],
+						"qualification": "",
+						"whyThisSkill": "Feel confident I have working and teaching for 20 years",
+						"yearOfExperience": "20",
+						"noOfStudentsTaught": "",
+						"mediaType": ""
+					}
+				}
+			]
+		}
+	],
+	"providerBio": {
+		"funFactsAboutYourself": "I am going super slow now",
+		"formalEducation": ""
+	},
+	"payments": [
+		1,
+		2,
+		3,
+		4
+	]
+}

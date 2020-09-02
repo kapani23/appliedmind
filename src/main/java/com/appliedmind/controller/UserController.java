@@ -20,6 +20,7 @@ import com.appliedmind.dto.user.ProfileCreationRequest;
 import com.appliedmind.dto.user.ProfileCreationResponse;
 import com.appliedmind.dto.user.ProfileVerificationRequest;
 import com.appliedmind.dto.user.ProfileVerificationResponse;
+import com.appliedmind.dto.user.ProviderRegistrationRequest;
 import com.appliedmind.service.UserService;
 import com.appliedmind.utils.DeviceMetadataUtils;
 
@@ -61,6 +62,16 @@ public class UserController {
 			HttpServletRequest httpRequest) {
 
 		return ResponseEntity.ok(this.userService.verifyUserLogin(loginRequest));
+	}
+
+	// Verify the user login
+	@PostMapping(path = "/updateUserServices", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<LoginResponse> updateUserServices(
+			@RequestBody @Valid ProviderRegistrationRequest providerRegRequest) {
+		
+		System.out.println(providerRegRequest);
+
+		return null;
 	}
 
 	private DeviceMetada buildUserDeviceMetada(Device device, HttpServletRequest servletRequest) {

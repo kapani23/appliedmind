@@ -17,7 +17,7 @@ public class ServiceCategoryEntity {
 	@Column(name = "SERVICE_CATEGORY_ID")
 	private Long serviceCategoryId;
 
-	// Teacher, Musician
+	// Teaching, Wellness & Health
 	@Column(name = "SERVICE_CATEGORY_NAME")
 	private String serviceCategoryName;
 

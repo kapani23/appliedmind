@@ -1,8 +1,8 @@
 {
   "services": [
     {
-      "categoryId": "1",
-      "servicesId": "2",
+      "categoryId": "2", // Teaching
+      "servicesId": "12",// Grade 7 Math
       "serviceEngagementFeeTerms": [
         {
           "engagementType": "1",
@@ -23,8 +23,8 @@
       }
     },
     {
-      "categoryId": "3",
-      "servicesId": "23",
+      "categoryId": "2", // Teaching
+      "servicesId": "13", // Grade 8 Math
       "serviceEngagementFeeTerms": [
         {
           "engagementType": "2",
@@ -40,7 +40,7 @@
       }
     }
   ],
-  "self-bio": {
+  "selfBio": {
     "funFactsAboutYourself": "I am going super slow now",
     "formalEducation":""
   },
