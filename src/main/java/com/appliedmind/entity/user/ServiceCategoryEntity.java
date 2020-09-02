@@ -21,9 +21,9 @@ public class ServiceCategoryEntity {
 	@Column(name = "SERVICE_CATEGORY_NAME")
 	private String serviceCategoryName;
 
-	@OneToOne(targetEntity = UserServicesEntity.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "USER_SERVICES_ID", referencedColumnName = "USER_SERVICES_ID")
-	private UserServicesEntity userServicesEntity;
+//	@OneToOne(targetEntity = UserServicesEntity.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//	@JoinColumn(name = "USER_SERVICES_ID", referencedColumnName = "USER_SERVICES_ID")
+//	private UserServicesEntity userServicesEntity;
 
 	public Long getServiceCategoryId() {
 		return serviceCategoryId;
@@ -41,12 +41,12 @@ public class ServiceCategoryEntity {
 		this.serviceCategoryName = serviceCategoryName;
 	}
 
-	public UserServicesEntity getUserServicesEntity() {
-		return userServicesEntity;
-	}
-
-	public void setUserServicesEntity(UserServicesEntity userServicesEntity) {
-		this.userServicesEntity = userServicesEntity;
-	}
+//	public UserServicesEntity getUserServicesEntity() {
+//		return userServicesEntity;
+//	}
+//
+//	public void setUserServicesEntity(UserServicesEntity userServicesEntity) {
+//		this.userServicesEntity = userServicesEntity;
+//	}
 
 }

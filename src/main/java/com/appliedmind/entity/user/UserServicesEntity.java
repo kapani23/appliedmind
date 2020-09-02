@@ -14,7 +14,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -34,8 +33,8 @@ public class UserServicesEntity {
 	private List<UserSkillsEntity> userSkillsEntity;
 
 	// Teaching, Wellness & Health, Music, Cooking
-	@OneToOne(mappedBy = "userServicesEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private ServiceCategoryEntity serviceCategoryEntity;
+	// @OneToOne(mappedBy = "userServicesEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	// private ServiceCategoryEntity serviceCategoryEntity;
 
 	// Software Developer, Lead Engineer etc
 	// Teacher in top school in Pune etc
@@ -111,13 +110,13 @@ public class UserServicesEntity {
 		this.userSkillsEntity = userSkillsEntity;
 	}
 
-	public ServiceCategoryEntity getServiceCategoryEntity() {
-		return serviceCategoryEntity;
-	}
-
-	public void setServiceCategoryEntity(ServiceCategoryEntity serviceCategoryEntity) {
-		this.serviceCategoryEntity = serviceCategoryEntity;
-	}
+//	public ServiceCategoryEntity getServiceCategoryEntity() {
+//		return serviceCategoryEntity;
+//	}
+//
+//	public void setServiceCategoryEntity(ServiceCategoryEntity serviceCategoryEntity) {
+//		this.serviceCategoryEntity = serviceCategoryEntity;
+//	}
 
 	public String getAboutYourSelf() {
 		return aboutYourSelf;

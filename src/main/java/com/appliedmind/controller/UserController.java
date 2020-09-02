@@ -66,12 +66,12 @@ public class UserController {
 
 	// Verify the user login
 	@PostMapping(path = "/updateUserServices", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<LoginResponse> updateUserServices(
+	public ResponseEntity<Boolean> updateUserServices(
 			@RequestBody @Valid ProviderRegistrationRequest providerRegRequest) {
-		
+
 		System.out.println(providerRegRequest);
 
-		return null;
+		return ResponseEntity.ok(this.userService.updateUserServices(providerRegRequest));
 	}
 
 	private DeviceMetada buildUserDeviceMetada(Device device, HttpServletRequest servletRequest) {

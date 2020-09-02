@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -207,8 +208,8 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean updateUserServices(ProviderRegistrationRequest providerRegRequest) {
 
-		String phone = null;
-		String email = null;
+		String phone = providerRegRequest.getPhone();
+		String email = providerRegRequest.getEmail();
 
 		UserProfileEntity profileEntity = null;
 
@@ -222,47 +223,67 @@ public class UserServiceImpl implements UserService {
 
 		List<UserServicesEntity> userServices = profileEntity.getUserServicesEntity();
 
-		if (userServices == null) {
+		if (userServices == null || userServices.isEmpty()) {
 			userServices = new ArrayList<>();
 		}
 
 		List<ServiceRequest> services = providerRegRequest.getServices();
 
+		LocalDateTime time = LocalDateTime.now();
+
 		for (ServiceRequest serviceRequest : services) {
 
 			// Service which is equal to Category i.e. Teaching / Cooking / Wellness &
 			UserServicesEntity servicesEntity = new UserServicesEntity();
-			servicesEntity.setAboutYourSelf("");
+			servicesEntity.setAboutYourSelf(serviceRequest.getServiceExperienceSummary().getWhyThisSkill());
 			servicesEntity.setAwardsRecognition("");
-			servicesEntity.setCertification(serviceRequest.getServiceExperienceSummary().getCertifications().get(0));
-			servicesEntity.setExperience("");
+
+			if (CollectionUtils.isNotEmpty(serviceRequest.getServiceExperienceSummary().getCertifications())) {
+				servicesEntity
+						.setCertification(serviceRequest.getServiceExperienceSummary().getCertifications().get(0));
+			}
+
+			servicesEntity.setExperience(serviceRequest.getServiceExperienceSummary().getYearOfExperience());
 			servicesEntity.setInstituteName("");
 			servicesEntity.setQualification(serviceRequest.getServiceExperienceSummary().getQualification());
-			servicesEntity.setServiceName("");
+			servicesEntity.setServiceName(serviceRequest.getServiceId());
+			servicesEntity.setCreatedTime(time);
+			servicesEntity.setUpdatedTime(time);
 			servicesEntity.setUserProfileEntity(profileEntity);
 
 			List<SkillRequest> skills = serviceRequest.getSkills();
-
+			List<UserSkillsEntity> userSkillsEntityList = new ArrayList<>();
+			
 			for (SkillRequest skill : skills) {
-
-				List<UserSkillsEntity> userSkillsEntityList = new ArrayList<>();
 
 				// Skills i.e. Math Grade 6, Math Grade 7
 				UserSkillsEntity userSkillEntity = new UserSkillsEntity();
 				userSkillEntity.setInstituteName("");
-				userSkillEntity.setQualification("");
-				userSkillEntity.setSkillCertification("");
-				userSkillEntity.setSkillExp("");
-				userSkillEntity.setSkillName("");
-				userSkillEntity.setUserServicesEntity(servicesEntity);
-				
-			}
+				userSkillEntity.setQualification(skill.getSkillExperienceSummary().getQualification());
 
+				if (CollectionUtils.isNotEmpty(skill.getSkillExperienceSummary().getCertifications())) {
+					userSkillEntity.setSkillCertification(skill.getSkillExperienceSummary().getCertifications().get(0));
+				}
+
+				userSkillEntity.setSkillExp(skill.getSkillExperienceSummary().getYearOfExperience());
+				userSkillEntity.setSkillName(skill.getSkillId());
+				userSkillEntity.setCreatedTime(time);
+				userSkillEntity.setUpdatedTime(time);
+				userSkillEntity.setUserServicesEntity(servicesEntity);
+				userSkillsEntityList.add(userSkillEntity);
+
+			}
+			
+			servicesEntity.setUserSkillsEntity(userSkillsEntityList);
+
+			userServices.add(servicesEntity);
 		}
 
-		
+		profileEntity.setUserServicesEntity(userServices);
 
-		return false;
+		userRepository.save(profileEntity);
+
+		return true;
 	}
 
 	@Override
