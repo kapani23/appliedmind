@@ -68,9 +68,6 @@ public class UserController {
 	@PostMapping(path = "/updateUserServices", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Boolean> updateUserServices(
 			@RequestBody @Valid ProviderRegistrationRequest providerRegRequest) {
-
-		System.out.println(providerRegRequest);
-
 		return ResponseEntity.ok(this.userService.updateUserServices(providerRegRequest));
 	}
 

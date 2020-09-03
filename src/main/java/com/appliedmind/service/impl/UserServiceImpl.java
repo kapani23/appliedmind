@@ -30,6 +30,7 @@ import com.appliedmind.entity.user.UserProfileEntity;
 import com.appliedmind.entity.user.UserServicesEntity;
 import com.appliedmind.entity.user.UserSkillsEntity;
 import com.appliedmind.repository.UserRepository;
+import com.appliedmind.service.ServiceException;
 import com.appliedmind.service.TokenService;
 import com.appliedmind.service.UserService;
 import com.appliedmind.utils.ResponseCode;
@@ -219,6 +220,11 @@ public class UserServiceImpl implements UserService {
 			profileEntity = userRepository.findByEmail(email);
 		} else {
 			throw new RuntimeException("Cannot happen. We always want to have a search query of phone or email");
+		}
+		
+		if(profileEntity == null) {
+			throw new ServiceException(new ValidationResponse(ResponseCode.USER_NOT_REGISTERED.getCode(),
+					ResponseCode.USER_NOT_REGISTERED.getDescription()));
 		}
 
 		List<UserServicesEntity> userServices = profileEntity.getUserServicesEntity();
