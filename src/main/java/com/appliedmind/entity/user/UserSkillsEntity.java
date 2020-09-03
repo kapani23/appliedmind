@@ -15,11 +15,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "USER_SERVICES_CATEGORY_SKILLS")
+@Table(name = "USER_SKILLS")
 public class UserSkillsEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "SKILL_ID")
 	private Long userSkillId;
 

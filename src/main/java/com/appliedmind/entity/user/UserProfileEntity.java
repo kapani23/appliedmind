@@ -21,7 +21,7 @@ import javax.persistence.Table;
 public class UserProfileEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "PROFILE_ID")
 	private Long userProfileId;
 

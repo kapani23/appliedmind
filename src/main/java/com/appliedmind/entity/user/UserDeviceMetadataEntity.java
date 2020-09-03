@@ -18,7 +18,7 @@ import javax.persistence.Table;
 public class UserDeviceMetadataEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "DEVICE_METADATA_ID")
 	private Long userDeviceMetadataId;
 

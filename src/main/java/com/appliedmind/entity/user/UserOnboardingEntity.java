@@ -23,7 +23,7 @@ import com.appliedmind.utils.enums.UserOnboardingStatusEnum;
 public class UserOnboardingEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ONBOARDING_ID")
 	private Long userOnboardingId;
 

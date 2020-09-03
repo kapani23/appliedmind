@@ -18,7 +18,7 @@ import javax.persistence.Table;
 public class UserAddressEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ADDRESS_ID")
 	private Long userAddressId;
 

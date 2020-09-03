@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class UserReviewEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "USER_REVIEW_ID")
 	private Long userReviewId;
 

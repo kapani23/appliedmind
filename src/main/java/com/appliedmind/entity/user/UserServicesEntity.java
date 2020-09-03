@@ -21,7 +21,7 @@ import javax.persistence.Table;
 public class UserServicesEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "USER_SERVICES_ID")
 	private Long userServiceId;
 

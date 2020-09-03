@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class AppointmentEntity {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "APPOINTMENT_ID")
 	private Long appointmentId;
 

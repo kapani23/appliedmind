@@ -21,7 +21,7 @@ public class VerifcationTokenEntity {
 	private static final long TOKEN_EXPIRATION_MIN = 5;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "VERIFICATION_ID")
 	private Long verificationId;
 
