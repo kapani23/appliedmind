@@ -18,7 +18,7 @@ import com.appliedmind.service.TokenService;
 
 @RestController
 @RequestMapping("/token")
-@CrossOrigin(origins = "http://localhost:8084")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class TokenController {
 
 	@Autowired

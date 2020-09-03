@@ -25,7 +25,7 @@ import com.appliedmind.search.StaticDataService;
 
 @RestController
 @RequestMapping("/static")
-@CrossOrigin(origins = "http://localhost:8084")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class StaticDataController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());

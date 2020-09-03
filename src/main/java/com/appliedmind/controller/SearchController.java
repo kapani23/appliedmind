@@ -22,7 +22,7 @@ import com.appliedmind.search.StaticDataService;
 
 @RestController
 @RequestMapping("/search")
-@CrossOrigin(origins = "http://localhost:8084")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class SearchController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());

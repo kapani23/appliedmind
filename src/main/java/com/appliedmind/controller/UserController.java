@@ -26,7 +26,7 @@ import com.appliedmind.utils.DeviceMetadataUtils;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin(origins = "http://localhost:8084")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UserController {
 
 	@Autowired
