@@ -230,7 +230,7 @@
 <xml-maven-plugin.version>1.0.2</xml-maven-plugin.version>
 <xmlunit2.version>2.6.4</xmlunit2.version>
 </properties>
-<dependencyManagement>
+
 <dependencies>
 <dependency>
 <groupId>org.springframework.boot</groupId>
@@ -3213,7 +3213,7 @@
 <version>${wsdl4j.version}</version>
 </dependency>
 </dependencies>
-</dependencyManagement>
+
 <build>
 <pluginManagement>
 <plugins>
